@@ -15,6 +15,8 @@ RUN apt-get update \
 WORKDIR /
 RUN git clone -b dev https://github.com/arabic-digital-humanities/BlackLab.git \
     && git clone https://github.com/arabic-digital-humanities/index-safar.git \
+    && mkdir -p /etc/blacklab/formats \
+    && cp /index-safar/*.yaml /etc/blacklab/formats \
     && cd BlackLab
 WORKDIR /BlackLab
 RUN mvn install
