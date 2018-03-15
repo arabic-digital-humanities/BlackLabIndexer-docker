@@ -13,7 +13,9 @@ RUN apt-get update \
     && apt-get autoremove \
 		&& apt-get clean
 WORKDIR /
-RUN git clone -b dev https://github.com/arabic-digital-humanities/BlackLab.git && cd BlackLab
+RUN git clone -b dev https://github.com/arabic-digital-humanities/BlackLab.git \
+    && git clone https://github.com/arabic-digital-humanities/index-safar.git \
+    && cd BlackLab
 WORKDIR /BlackLab
 RUN mvn install
 CMD /bin/bash
