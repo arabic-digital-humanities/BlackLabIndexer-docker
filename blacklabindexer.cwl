@@ -6,6 +6,11 @@ baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-1.7.0-SNAPSHOT.jar"
 requirements:
   - class: DockerRequirement
     dockerPull: nlppln/blacklab
+  - class: InitialWorkDirRequirement
+    listing: 
+      - entryname: indextemplate.json
+        entry: |
+          {"textDirection": "$(inputs.textDirection)", "contentViewable": $(inputs.contentViewable)}
 
 inputs:
   action:
@@ -24,6 +29,12 @@ inputs:
     type: Directory
     inputBinding:
       position: 3
+  textDirection:
+    type: string
+    default: 'ltr'
+  contentViewable:
+    type: boolean
+    default: true
 
 outputs: 
   out_dir:
