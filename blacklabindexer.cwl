@@ -29,10 +29,10 @@ inputs:
     type: Directory
     inputBinding:
       position: 3
-  textDirection:
+  text_direction:
     type: string
     default: 'ltr'
-  contentViewable:
+  content_viewable:
     type: boolean
     default: true
 
