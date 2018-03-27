@@ -7,10 +7,10 @@ requirements:
   - class: DockerRequirement
     dockerPull: nlppln/blacklab
   - class: InitialWorkDirRequirement
-    listing: 
+    listing:
       - entryname: indextemplate.json
         entry: |
-          {"textDirection": "$(inputs.textDirection)", "contentViewable": $(inputs.contentViewable)}
+          {"textDirection": "$(inputs.text_direction)", "contentViewable": $(inputs.content_viewable)}
 
 inputs:
   action:
@@ -36,7 +36,7 @@ inputs:
     type: boolean
     default: true
 
-outputs: 
+outputs:
   out_dir:
     type: Directory
     outputBinding:
