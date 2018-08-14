@@ -11,7 +11,7 @@ cwltool https://raw.githubusercontent.com/arabic-digital-humanities/BlackLabInde
 
 Use it as step in a workflow:
 
-```
+```python
 with WorkflowGenerator(working_dir='path/to/working_dir') as wf:
 
     ...
