@@ -43,3 +43,9 @@ with WorkflowGenerator(working_dir='path/to/working_dir') as wf:
 
     wf.save('path/to/workflow.cwl', wd=True, relative=False)
 ```
+
+## java.lang.OutOfMemoryError
+
+To index big documents, it may be necessary to increase the Java heap space. This can be done by setting the `--xmx` option, for example use `--xmx 4g` to set the heap space to 4Gb (this is the default value).
+
+(Please note that the syntax for setting the maximum heap space size differs from how this option is specified in the `java` command.)
