@@ -1,16 +1,14 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-1.7.0-SNAPSHOT.jar", "nl.inl.blacklab.tools.IndexTool"]
+baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-2.0.0-SNAPSHOT.jar", "nl.inl.blacklab.tools.IndexTool"]
 
 requirements:
   - class: DockerRequirement
     dockerPull: nlppln/blacklab
   - class: InitialWorkDirRequirement
     listing:
-      - entryname: indextemplate.json
-        entry: |
-          {"textDirection": "$(inputs.text_direction)", "contentViewable": $(inputs.content_viewable)}
+      - $(inputs.config)
 
 inputs:
   action:
@@ -35,6 +33,8 @@ inputs:
   content_viewable:
     type: boolean
     default: true
+  config:
+    type: File
 
 outputs:
   out_dir:
