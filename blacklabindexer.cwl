@@ -27,12 +27,6 @@ inputs:
     type: Directory
     inputBinding:
       position: 3
-  text_direction:
-    type: string
-    default: 'ltr'
-  content_viewable:
-    type: boolean
-    default: true
   config:
     type: File
 
