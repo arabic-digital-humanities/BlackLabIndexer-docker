@@ -6,8 +6,8 @@ Dockerfile and CWL step for the [BlackLab Indexer](http://inl.github.io/BlackLab
 Index using the command line:
 
 ```
-cwltool https://raw.githubusercontent.com/arabic-digital-humanities/BlackLabIndexer-docker/master/blacklabindexer.cwl --action create --index_format safar-stemmer --text_direction rtl --content_viewable --index_name corpus --in_dir path/to/input/data
-```
+cwltool https://raw.githubusercontent.com/arabic-digital-humanities/BlackLabIndexer-docker/master/blacklabindexer.cwl
+--action create --index_format safar-[analyzer|stemmer] --index_name corpus --in_dir path/to/input/data --config path/to/index-config.yml
 
 Use it as step in a workflow:
 
@@ -20,20 +20,21 @@ with WorkflowGenerator(working_dir='path/to/working_dir') as wf:
 
     ...
 
+    config_file = wf.add_input(config='File')
+    in_dir = wf.add_input(in_dir='Directory')
     index_name = wf.add_input(index_name='string', default='corpus')
     action = wf.add_input(action='string', default='create')
     index_format = wf.add_input(index_format='string', default='safar-stemmer')
-    text_direction = wf.add_input(text_direction='string', default='rtl')
-    content_viewable = wf.add_input(content_viewable='boolean', default=True)
+    xmx = wf.add_input(xmx='string', default='4G')
 
     ...
 
     indexed = wf.blacklabindexer(action=action,
                                  index_format=index_format,
                                  index_name=index_name,
+                                 config=config_file,
                                  in_dir=merged_dir,
-                                 text_direction=text_direction,
-                                 content_viewable=content_viewable)
+                                 xmx=xmx)
 
     ...
 
@@ -41,7 +42,7 @@ with WorkflowGenerator(working_dir='path/to/working_dir') as wf:
 
     ...
 
-    wf.save('path/to/workflow.cwl', wd=True, relative=False)
+    wf.save('path/to/workflow.cwl', mode='wd')
 ```
 
 ## java.lang.OutOfMemoryError
