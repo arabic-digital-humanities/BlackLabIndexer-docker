@@ -5,7 +5,7 @@ baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-2.0.0-RC1.jar"]
 
 requirements:
   - class: DockerRequirement
-    dockerPull: nlppln/blacklab
+    dockerPull: nlppln/blacklab:0.1.0
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.config)
