@@ -1,7 +1,7 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-2.0.0-SNAPSHOT.jar"]
+baseCommand: ["java", "-cp", "/BlackLab/core/target/blacklab-2.0.0-RC1.jar"]
 
 requirements:
   - class: DockerRequirement
