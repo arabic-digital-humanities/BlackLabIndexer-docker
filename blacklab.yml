@@ -1,0 +1,15 @@
+#  BlackLab config file
+#  ===============================================================
+# General BlackLab settings that can apply to different BlackLab applications,
+# not just to BlackLab Server
+# (this file is ignored if you're running BlackLab Server; all settings are contained
+#  in its own configuration file. Other programs, such as IndexTool and QueryTool,
+#  do read it.)
+
+# This indicates we're using the new index format.
+configVersion: 2
+
+# Options for indexing operations
+indexing:
+    # Store at most this much values for a field in indexmetadata.yaml
+    maxMetadataValuesToStore: 500
