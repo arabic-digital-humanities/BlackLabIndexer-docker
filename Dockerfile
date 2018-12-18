@@ -13,7 +13,7 @@ RUN apt-get update \
     && apt-get autoremove \
 		&& apt-get clean
 WORKDIR /
-RUN git clone -b dev https://github.com/arabic-digital-humanities/BlackLab.git \
+RUN git clone -b v2.0.0-RC1 --depth 1 https://github.com/INL/BlackLab.git \
     && cd BlackLab
 WORKDIR /BlackLab
 RUN mvn install
