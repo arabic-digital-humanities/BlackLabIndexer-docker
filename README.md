@@ -1,6 +1,8 @@
 # BlackLabIndexer-docker
 Dockerfile and CWL step for the [BlackLab Indexer](http://inl.github.io/BlackLab/)
 
+BlackLab version used: [v2.0.0-RC1](https://github.com/INL/BlackLab/tree/v2.0.0-RC1)
+
 ## Usage
 
 Index using the command line:
