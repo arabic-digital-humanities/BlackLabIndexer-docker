@@ -10,6 +10,7 @@ Index using the command line:
 ```
 cwltool https://raw.githubusercontent.com/arabic-digital-humanities/BlackLabIndexer-docker/master/blacklabindexer.cwl
 --action create --index_format safar-[analyzer|stemmer] --index_name corpus --in_dir path/to/input/data --config path/to/index-config.yml
+```
 
 Use it as step in a workflow:
 
