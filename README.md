@@ -11,9 +11,9 @@ Index using the command line:
 cwltool https://raw.githubusercontent.com/arabic-digital-humanities/BlackLabIndexer-docker/master/blacklabindexer.cwl
 --action create --index_format safar-[analyzer|stemmer] --index_name corpus --in_dir path/to/input/data --config path/to/index-config.yml
 ```
+For more information on configuring the index with a `config.yml` file, see the [BlackLab documentation](http://inl.github.io/BlackLab/how-to-configure-indexing.html).
 
 Use it as step in a workflow:
-
 ```python
 with WorkflowGenerator(working_dir='path/to/working_dir') as wf:
 
